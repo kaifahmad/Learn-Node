@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kaifahmad/Learn-Node/issues"
   },
-  "homepage": "https://github.com/kaifahmad/Learn-Node#readme"
+  "homepage": "https://github.com/kaifahmad/Learn-Node#readme",
+  "dependencies": {
+    "nodemon":   "^2.0.12"
+  }
 }
