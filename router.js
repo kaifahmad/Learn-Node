@@ -5,7 +5,7 @@ const reqHandler = (req,res)=>{
         res.setHeader('Content-Type', 'text/html');
         res.write(`
         <form action="/credentials" method = "post">
-        <label for="fname">First name:</label><br>
+        <label for="fname">Enter First name:</label><br>
         <input type="text" id="fname" name="fname" value="John"><br>
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname" value="Doe"><br><br>
