@@ -7,13 +7,23 @@ const rootDir = require('../util/path');
 
 
 router.get('/add-product',(req,res,next)=> {
-    res.sendFile(path.join(rootDir,'view','add-product.html'));
+    res.render('add-product', {
+        'pageTitle' : 'Add Product',
+        'prods'  : products    
+    });
 });
 
+const products = [];
+
 router.post('/add-product',(req,res,next)=> {
-    console.log("Product Name: ",req.body.product);
-    res.send(`<h1>Thanks for your Response  </h1>`);
-    // res.redirect('/');
+    products.push({
+        "book_title" : req.body.product,
+        "email" : req.body.email,
+        "book_description" : req.body.message,
+    });
+    console.log(products);
+    res.redirect('/');
 })
 
-module.exports = router;
+exports.routes = router;
+exports.products = products;

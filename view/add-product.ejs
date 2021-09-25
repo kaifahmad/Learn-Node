@@ -1,0 +1,77 @@
+<%- include('includes/header.ejs') %>
+
+    <body class="cbp-spmenu-push">
+        <!--CONTACT SECTION-->
+        <section class="for-full-back color-bg-one" id="contact-sec">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <h1><i class="fa fa-globe faa-pulse animated  "></i>Add Product</h1>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-8 col-md-offset-2 ">
+                            <h4>
+                                <strong>Add a new Product from here.
+                                </strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="for-full-back color-white " id="contact-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 contact-cls">
+                        <h2>Welcome to Add products</h2>
+                        <div>
+                            <span><i class="fa fa-home"></i>Address: New Your City</span>
+                            <br />
+                            <span><i class="fa fa-phone"></i>Phone: 82-230-567-899</span>
+                            <br />
+                            <span><i class="fa fa-envelope-o"></i>indo@yourdomain.com</span>
+                            <br />
+                            <span><i class="fa fa-globe"></i>www.yourdomain.com</span>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <h2>Product feilds</h2>
+                        <p>
+                            Enter the Product details in the respective feilds
+                        </p>
+                        <form action="/add-product" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input name="product" type="text" class="form-control" required="required"
+                                            placeholder="Product name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input name="email" type="text" class="form-control" required="required"
+                                            placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" required="required" class="form-control"
+                                            rows="3" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-default">Submit Request</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END CONTACT SECTION-->
+
+    </body>
+    <%- include('includes/footer.ejs') %>
