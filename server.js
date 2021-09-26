@@ -8,7 +8,7 @@ const app = express();
 app.set('view engine','ejs');
 app.set('views','view');
 
-const adminData = require('./routers/admin');
+const adminRoutes = require('./routers/admin');
 const shopRoutes = require('./routers/shop');
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 // Making the File directory public in Order to link the assets to  the html files
 app.use(express.static(path.join(__dirname,'public')));
 
-app.use(adminData.routes);
+app.use(adminRoutes);
 app.use(shopRoutes);
 //Use Allows to Add a middleware Function in between request and the Response
 
