@@ -1,0 +1,114 @@
+<%- include('includes/header.ejs') %>
+    <!--PRODUCT LIST SECTION-->
+    <section class="for-full-back color-bg-one" id="services-sec">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h1><i class="fa fa-rocket faa-pulse animated  "></i>Products</h1>
+
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <h4>
+                            <strong>This Section shows the Products added by the Admin
+                            </strong>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="for-full-back color-white " id="services-inner">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <% prods.forEach((prod)=>{ %>
+                        <div class="col-md-3 ">
+                            <div class="service-div">
+                                <i class="fa fa-desktop fa-5x faa-vertical animated"></i>
+                                <h4>
+                                    <%= prod.book_title %>
+                                </h4>
+                                <p>
+                                    <%= prod.book_description %>
+                                </p>
+                            </div>
+                        </div>
+                        <%}) %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END SERVICES SECTION-->
+    <!--STATS SECTION-->
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 ">
+                    <div class="stats-div">
+                        <h3>5000+ </h3>
+                        <h4>Projects</h4>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 ">
+                    <div class="stats-div">
+                        <h3>205+ </h3>
+                        <h4>Countries</h4>
+                    </div>
+
+                </div>
+                <div class="col-md-3 ">
+
+                    <div class="stats-div">
+                        <h3>1300+ </h3>
+                        <h4>Offices</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="stats-div">
+                        <h3>2400+ </h3>
+                        <h4>Clients</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END STATS SECTION-->
+
+    <!-- SOCIAL STATS SECTION-->
+    <section>
+        <div class="container">
+            <div class="row g-pad-bottom">
+                <div class="col-md-3 ">
+                    <div class="social-stats-div">
+                        <i class="fa fa-facebook fa-5x "></i>
+                        <h3>2000+ Followers </h3>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="social-stats-div">
+                        <i class="fa fa-twitter fa-5x "></i>
+                        <h3>1900+ Tweets </h3>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="social-stats-div">
+                        <i class="fa fa-google-plus fa-5x "></i>
+                        <h3>1530+ Followers </h3>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="social-stats-div">
+                        <i class="fa fa-linkedin fa-5x "></i>
+                        <h3>3000+ Connections </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SOCIAL STATS SECTION-->
+
+
+    <%- include('includes/footer.ejs') %>

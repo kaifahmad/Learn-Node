@@ -1,6 +1,6 @@
 const Product = require('../models/product');
 
-//For Retrieving the Products
+//For Retrieving the get request of Add-Products(get request on /add-product)
 const getAddProducts = (req,res,next)=> {
     res.render('add-product', {
         'pageTitle' : 'Add Product'  
@@ -8,7 +8,7 @@ const getAddProducts = (req,res,next)=> {
 }
 
 
-//For Adding the Products
+//For Adding the Products (post request on /add-product)
 const addProduct = (req,res,next)=> {
     let data = {
         "book_title" : req.body.product,
