@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 // Making the File directory public in Order to link the assets to  the html files
 app.use(express.static(path.join(__dirname,'public')));
 
-app.use(adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 //Use Allows to Add a middleware Function in between request and the Response
 
@@ -25,3 +25,7 @@ app.use((req,res,next)=>{
 })
 
 app.listen(4000);
+
+
+
+
