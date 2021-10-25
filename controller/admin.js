@@ -12,8 +12,8 @@ const getAddProducts = (req,res,next)=> {
 const postAddProduct = (req,res,next)=> {
     let data = {
         "book_title" : req.body.product,
-        "email" : req.body.email,
-        "book_description" : req.body.message,
+        "book_price" : req.body.price,
+        "book_description" : req.body.description,
     }; 
     const product = new Product(data);
     product.save();
@@ -26,7 +26,7 @@ const products = (req,res,next)=> {
     
     //fetchAll is a static Funcion
     Product.fetchAll((products)=> {
-        res.render('shop/product-list', {
+        res.render('admin/products', {
             'pageTitle' : 'Shop | All Products',
             'prods' : products ,
             'path' : '/products'  

@@ -3,16 +3,6 @@
 const Product = require('../models/product');
 
 
-//For the Home page
-// const mainPage = (req,res,next)=> {
-    
-//     res.render('home', {
-//         'pageTitle' : 'Home | Welcome to the Store',
-//         'path' : '/'  
-//     });
-
-// }
-
 //For the Shop Page (get request on /shop)
 const productList = (req,res,next)=> {
     
@@ -47,9 +37,18 @@ const getCart = (req,res,next)=> {
 //For the Shop Index page (get request on /index)
 const getCheckout = (req,res,next)=> {
     
-    res.render('shop/index', {
+    res.render('shop/checkout', {
         'pageTitle' : 'Shop',
         'path' : '/checkout'  
+    });
+}
+
+//For the Shop Index page (get request on /index)
+const getOrders = (req,res,next)=> {
+    
+    res.render('shop/orders', {
+        'pageTitle' : 'Orders',
+        'path' : '/orders'  
     });
 }
 
@@ -58,4 +57,5 @@ exports.productList = productList;
 // exports.mainPage = mainPage;
 exports.index = getIndex;
 exports.cart = getCart;
+exports.orders = getOrders;
 exports.checkout = getCheckout;
