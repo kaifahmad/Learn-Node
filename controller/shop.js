@@ -7,10 +7,23 @@ const Product = require('../models/product');
 const productList = (req,res,next)=> {
     
     //fetchAll is a static Funcion
-    Product.fetchAll((products)=> {
+    Product.fetchAll().then(([rows,feildData]) =>{
         res.render('shop/product-list', {
             'pageTitle' : 'Shop | All Products',
-            'prods' : products ,
+            'prods' : rows ,
+            'path' : '/product-list'  
+        });
+    })
+}
+
+//For the Single Product page (get request on /shop)
+const singleProd = (req,res,next)=> {
+    
+    //fetchAll is a static Funcion
+    Product.findById(req.params.productId).then(([row]) =>{
+        res.render('shop/product-detail', {
+            'pageTitle' : `Shop | ${row[0]['Name']}`,
+            'prod' : row[0] ,
             'path' : '/product-list'  
         });
     })
@@ -43,7 +56,7 @@ const getCheckout = (req,res,next)=> {
     });
 }
 
-//For the Shop Index page (get request on /index)
+//For the Orders page (get request on /index)
 const getOrders = (req,res,next)=> {
     
     res.render('shop/orders', {
@@ -59,3 +72,4 @@ exports.index = getIndex;
 exports.cart = getCart;
 exports.orders = getOrders;
 exports.checkout = getCheckout;
+exports.singleProd = singleProd;

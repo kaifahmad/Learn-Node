@@ -1,7 +1,12 @@
 [
-    {
-        "book_title": "book 2",
-        "book_price": "7.8",
-        "book_description": "This is a good Book!!!"
-    }
+  {
+    "book_title": "book 2",
+    "book_price": "7.8",
+    "book_description": "This is a good Book!!!"
+  },
+  {
+    "book_title": "My Experiments",
+    "book_price": "5.9",
+    "book_description": "This is a great book by Gandhi..."
+  }
 ]

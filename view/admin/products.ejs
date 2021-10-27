@@ -27,18 +27,22 @@
                             <div class="service-div">
                                 <i class="fa fa-desktop fa-5x faa-vertical animated"></i>
                                 <h4>
-                                    <%= prod.book_title %>
+                                    <%= prod.Name %>
                                 </h4>
                                 <h4>
-                                    <%= prod.book_price %> $
+                                    <%= prod.Price %> $
                                 </h4>
                                 <p>
-                                    <%= prod.book_description %>
+                                    <%= prod.Description.substring(0,50) %>...
                                 </p>
                                 <div class="row">
                                     <button class="btn btn-primary">Add to Cart</button>
-                                    <button class="btn btn-success">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                    <a href="/admin/edit-product/<%= prod.ID %>">
+                                        <button class="btn btn-success">Edit</button>
+                                    </a>
+                                    <a href="/admin/delete-product/<%= prod.ID %>">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

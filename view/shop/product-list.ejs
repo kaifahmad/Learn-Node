@@ -27,15 +27,22 @@
                             <div class="service-div">
                                 <i class="fa fa-desktop fa-5x faa-vertical animated"></i>
                                 <h4>
-                                    <%= prod.book_title %>
+                                    <%= prod.Name %>
                                 </h4>
                                 <h4>
-                                    <%= prod.book_price %> $
+                                    <%= prod.Price %> $
                                 </h4>
                                 <p>
-                                    <%= prod.book_description %>
+                                    <%= prod.Description.substring(0, 50) %>... 
                                 </p>
+                                <p>Category: 
+                                    <%= prod.Category %>
+                                </p>
+                           
                                 <div class="row">
+                                    <a href="/products/<%= prod.ID%>">
+                                        <button type="submit" class="btn btn-primary">View Details</button>
+                                    </a>
                                     <form action="/add-to-cart" method="POST">
                                         <input type="submit" class="btn btn-primary" value="Add to Cart"></input>
                                     </form>

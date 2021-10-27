@@ -1,44 +1,46 @@
 // Model file
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require("fs");
+const path = require("path");
 
 //getting the Root Directory
-const root = require('../util/path');
+const root = require("../util/path");
 
-const p = path.join(root, 'data', 'products.json');
+//Require Util Data base
+const db = require("../util/database");
 
-let products = [];
-
-//Helper Function for Reading files from the data
-const getProdFromFile = (cb)=>{
-    fs.readFile(p,(err, fileContent)=>{
-        if(!err) {
-            products = JSON.parse(fileContent);
-            cb(products);
-        }
-        else cb([]);
-    });
-}
+// const p = path.join(root, "data", "products.json");
 
 // Product class Definition
 module.exports = class Product {
-    constructor(t) {
-        this.book_title = t.book_title;
-        this.book_price = t.book_price;
-        this.book_description = t.book_description;
-    }
-    save() {
-        getProdFromFile((products)=> {
-            products.push(this);
-            console.log(this);
-            fs.writeFile(p,JSON.stringify(products), (err)=>{
-                console.log(err);
-            });
-        });
-    }
+  constructor(t) {
+    this.book_title = t.book_title;
+    this.book_price = t.book_price;
+    this.book_description = t.book_description;
+    this.book_category = t.book_category;
+    
+  }
+  save() {
+    return db.execute(
+      "INSERT INTO products (Name,Price,Description,Category) VALUES (?,?,?,?)",
+      [this.book_title, this.book_price, this.book_description, this.book_category]
+    );
+   
+  }
 
-    static fetchAll(cb) {
-        getProdFromFile(cb);
-    }
-}
+  static deleteById(id) {
+    
+    return db.execute(' DELETE FROM products WHERE ID= ?',[id]);
+  }
+  static findById(id) {
+      return db.execute('SELECT * FROM products WHERE ID= ?',[id]);
+  }
+  static updateById(data) {
+      return db.execute('UPDATE products SET Name = ?, Price = ?, Description = ?, Category = ? WHERE ID= ?',[data.book_title, data.book_price, data.book_description, data.book_category, data.book_id]);
+      // return db.execute('SELECT * FROM products WHERE ID= ?',[id]);
+  }
+
+  static fetchAll() {
+    return db.execute("SELECT * FROM products");
+  }
+};

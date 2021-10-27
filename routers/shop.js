@@ -4,13 +4,14 @@ const express = require('express');
 const router = express.Router();
 
 //From Controller
-const productsController = require('../controller/shop'); 
+const shopController = require('../controller/shop'); 
 
-router.get('/',productsController.index);
-router.get('/products',productsController.productList);
-router.get('/cart',productsController.cart); 
-router.get('/orders',productsController.orders); 
-router.get('/checkout',productsController.checkout);
+router.get('/',shopController.index);
+router.get('/products',shopController.productList);
+router.get('/products/:productId',shopController.singleProd);
+router.get('/cart',shopController.cart); 
+router.get('/orders',shopController.orders); 
+router.get('/checkout',shopController.checkout);
 //router.get('/single-product');
 
 
