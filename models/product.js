@@ -1,6 +1,5 @@
 // Model file
 
-// const fs = require("fs");
 const path = require("path");
 
 //getting the Root Directory
@@ -18,18 +17,17 @@ module.exports = class Product {
     this.book_price = t.book_price;
     this.book_description = t.book_description;
     this.book_category = t.book_category;
-    
+    this.user_id = t.user_id;
   }
   save() {
     return db.execute(
-      "INSERT INTO products (Name,Price,Description,Category) VALUES (?,?,?,?)",
-      [this.book_title, this.book_price, this.book_description, this.book_category]
+      "INSERT INTO products (Name,Price,Description,Category,user_id) VALUES (?,?,?,?,?)",
+      [this.book_title, this.book_price, this.book_description, this.book_category,this.user_id]
     );
    
   }
 
   static deleteById(id) {
-    
     return db.execute(' DELETE FROM products WHERE ID= ?',[id]);
   }
   static findById(id) {
@@ -37,9 +35,7 @@ module.exports = class Product {
   }
   static updateById(data) {
       return db.execute('UPDATE products SET Name = ?, Price = ?, Description = ?, Category = ? WHERE ID= ?',[data.book_title, data.book_price, data.book_description, data.book_category, data.book_id]);
-      // return db.execute('SELECT * FROM products WHERE ID= ?',[id]);
   }
-
   static fetchAll() {
     return db.execute("SELECT * FROM products");
   }

@@ -15,7 +15,8 @@ const postAddProduct = (req,res,next)=> {
         "book_title" : req.body.product_name,
         "book_price" : req.body.price,
         "book_description" : req.body.description,
-        "book_category" : req.body.category
+        "book_category" : req.body.category,
+        "user_id" : 1       //We need to change this going further
     };
 
     const product = new Product(data);

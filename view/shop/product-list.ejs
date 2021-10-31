@@ -44,6 +44,7 @@
                                         <button type="submit" class="btn btn-primary">View Details</button>
                                     </a>
                                     <form action="/add-to-cart" method="POST">
+                                        <input type="hidden" name="product_id" value="<%= prod.ID%>">
                                         <input type="submit" class="btn btn-primary" value="Add to Cart"></input>
                                     </form>
                                 </div>
