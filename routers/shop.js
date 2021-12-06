@@ -5,6 +5,7 @@ const router = express.Router();
 
 //From Controller
 const shopController = require('../controller/shop'); 
+const userController = require('../controller/user'); 
 
 router.get('/',shopController.index);
 router.get('/products',shopController.productList);
@@ -14,7 +15,11 @@ router.post('/remove-from-cart',shopController.postRemovefromCart);
 router.get('/cart',shopController.cart); 
 router.get('/orders',shopController.orders); 
 router.get('/checkout',shopController.checkout);
-//router.get('/single-product');
 
+
+// User register and login routes
+router.get('/registeration',userController.getRegisteration);
+router.post('/registeration',userController.postRegisteration);
+//Login and Register
 
 module.exports = router;

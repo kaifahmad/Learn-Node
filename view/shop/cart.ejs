@@ -30,7 +30,7 @@
                                     <%= prod.Name %>
                                 </h4>
                                 <h4>
-                                    <%= prod.price %> $
+                                    <%= prod.Price %> $
                                 </h4>
                                 <p>Quantity: 
                                     <%= prod.Quantity %>
@@ -43,6 +43,7 @@
                                     </a>
                                     <form action="/remove-from-cart" method="POST">
                                         <input type="hidden" name="product_id" value="<%= prod.ID%>">
+                                        <input type="hidden" name="cart_id" value="<%= prod.Cart_Id%>">
                                         <input type="submit" class="btn btn-primary" value="Remove from Cart"></input>
                                     </form>
                                 </div>
